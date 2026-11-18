@@ -31,8 +31,7 @@ Dépose les fichiers dans `public/photos/`, puis renseigne `src` dans `src/conte
 
 ## Publier
 
-**GitHub Pages** : pousse ce dossier dans un dépôt GitHub (branche `main`), puis dans *Settings → Pages*, choisis *Source : GitHub Actions*. Le workflow `.github/workflows/deploy.yml` construit et publie le site à chaque push.
-Le site est servi sous `/<nom-du-dépôt>/` ; pour un dépôt `<compte>.github.io`, vide `NEXT_PUBLIC_BASE_PATH` dans le workflow.
+**GitHub Pages** : `npm run deploy` lance les tests, construit le site sous `/portfolio/` et pousse le dossier `out/` sur la branche `gh-pages`. Site en ligne : https://mazounirayan.github.io/portfolio/
 
 **Vercel** : importe le dépôt, aucune configuration nécessaire.
 
