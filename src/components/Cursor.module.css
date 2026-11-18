@@ -1,0 +1,58 @@
+.dot,
+.ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.ring {
+  width: 0;
+  height: 0;
+}
+
+.ringInner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  translate: -50% -50%;
+  border: 1px solid rgba(239, 233, 223, 0.45);
+  border-radius: 50%;
+  transition: width 0.45s var(--ease-out), height 0.45s var(--ease-out), background 0.3s, border-color 0.3s;
+}
+
+.link .ringInner {
+  width: 56px;
+  height: 56px;
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.lens .ringInner {
+  width: 104px;
+  height: 104px;
+  border-color: var(--ink);
+  background: rgba(8, 7, 6, 0.35);
+  backdrop-filter: blur(2px) contrast(1.2);
+}
+
+.label {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink);
+}

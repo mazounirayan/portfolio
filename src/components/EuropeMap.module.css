@@ -1,0 +1,180 @@
+.map {
+  position: relative;
+  aspect-ratio: 160 / 110;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: radial-gradient(120% 90% at 70% 40%, rgba(232, 163, 61, 0.05), rgba(8, 7, 6, 0.6) 70%);
+}
+
+/* La « caméra » : zoom et cadrage sur le voyage actif */
+.camera {
+  position: absolute;
+  inset: 0;
+  transform-origin: 0 0;
+  transition: transform 1.1s var(--ease-out);
+  will-change: transform;
+}
+
+.svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.grid {
+  stroke: #1f1f1d;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.route {
+  fill: none;
+  stroke: var(--accent);
+  /* Épaisseur compensée par le zoom (pas de non-scaling-stroke : le tracé au scroll
+     mesure la longueur du chemin en unités SVG, les tirets doivent rester dans ces unités) */
+  stroke-width: calc(0.35px * var(--inv));
+  stroke-linecap: round;
+  transition: opacity 0.6s;
+}
+
+.flight {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: calc(0.25px * var(--inv));
+  stroke-dasharray: calc(1.2px * var(--inv)) calc(1.6px * var(--inv));
+  stroke-linecap: round;
+  opacity: 0.8;
+}
+
+.dim {
+  opacity: 0.18;
+  transition: opacity 0.6s;
+}
+
+.svg g {
+  transition: opacity 0.6s;
+}
+
+.trip {
+  transition: opacity 0.6s;
+}
+
+.city {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+/* Points et textes gardent la même taille quel que soit le zoom : on annule l'échelle de la
+   caméra (--inv = 1/s), décalages compris (ils sont multipliés par --inv eux aussi) */
+.dot,
+.label,
+.tripLabel {
+  scale: var(--inv);
+}
+
+.dot {
+  position: absolute;
+  left: -10px;
+  top: -10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transform-origin: center;
+}
+
+.dot::before,
+.dot::after {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.dot::after {
+  background: transparent;
+  border: 1px solid var(--accent);
+  animation: pulse 2.8s var(--ease-out) infinite;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  to {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+.label {
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+  font-family: var(--font-serif), serif;
+  font-size: 19px;
+  line-height: 1;
+  color: var(--ink);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s 0.3s;
+}
+
+.right {
+  left: 0;
+  transform-origin: 0 0;
+  translate: calc(12px * var(--inv)) calc(-50% * var(--inv));
+}
+
+.left {
+  right: 0;
+  transform-origin: 100% 0;
+  translate: calc(-12px * var(--inv)) calc(-50% * var(--inv));
+}
+
+.below {
+  left: 0;
+  transform-origin: 0 0;
+  translate: calc(-50% * var(--inv)) calc(12px * var(--inv));
+}
+
+.on {
+  opacity: 1;
+}
+
+.city:hover .label,
+.dot:focus-visible + .label {
+  opacity: 1;
+  transition-delay: 0s;
+}
+
+/* Un nom masqué pour éviter un chevauchement passe au-dessus des autres quand on le survole */
+.city:hover {
+  z-index: 2;
+}
+
+.tripLabel {
+  position: absolute;
+  translate: calc(12px * var(--inv)) calc(-150% * var(--inv));
+  transform-origin: 0 0;
+  white-space: nowrap;
+  font-size: 10px;
+  color: var(--muted);
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .camera {
+    transition: none;
+  }
+}

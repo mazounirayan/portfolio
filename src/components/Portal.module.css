@@ -1,0 +1,168 @@
+.portal_section {
+  position: relative;
+}
+
+.stage {
+  position: relative;
+  min-height: 100svh;
+  padding: 90px var(--gutter);
+  overflow: hidden;
+}
+
+.head {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: var(--muted);
+}
+
+.head p {
+  margin: 0;
+}
+
+.track {
+  flex: 0 0 160px;
+  height: 1px;
+  background: var(--line);
+}
+
+.bar {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70vmin;
+  height: 70vmin;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232, 163, 61, 0.22) 0%, rgba(232, 163, 61, 0.06) 40%, transparent 70%);
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+.portal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(78vmin, 760px);
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Mouvement actif : toutes les époques se superposent au centre de la scène */
+[data-motion='on'] .stage {
+  height: 100svh;
+}
+
+[data-motion='on'] .item {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.year {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-family: var(--font-serif), serif;
+  font-size: clamp(120px, 30vw, 460px);
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: transparent;
+  -webkit-text-stroke: 1.2px rgba(239, 233, 223, 0.6);
+  white-space: nowrap;
+}
+
+.caption {
+  position: absolute;
+  left: var(--gutter);
+  bottom: 9vh;
+  max-width: 440px;
+}
+
+.caption span {
+  color: var(--accent);
+}
+
+.caption h3 {
+  margin: 10px 0 8px;
+  font-family: var(--font-serif), serif;
+  font-weight: 400;
+  font-size: clamp(34px, 4.2vw, 60px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.caption p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.hint {
+  position: absolute;
+  right: var(--gutter);
+  bottom: 9vh;
+  z-index: 3;
+  margin: 0;
+  color: var(--muted);
+}
+
+.hint span {
+  display: inline-block;
+  margin-left: 6px;
+  color: var(--accent);
+  animation: hint 1.8s var(--ease-in-out) infinite;
+}
+
+@keyframes hint {
+  0%, 100% { transform: translateY(-2px); }
+  50% { transform: translateY(5px); }
+}
+
+/* Sans animation (mouvement réduit ou JS absent) : une simple liste */
+.portal_section:not([data-motion='on']) .portal,
+.portal_section:not([data-motion='on']) .glow,
+.portal_section:not([data-motion='on']) .year,
+.portal_section:not([data-motion='on']) .hint {
+  display: none;
+}
+
+.portal_section:not([data-motion='on']) .item {
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+}
+
+.portal_section:not([data-motion='on']) .caption {
+  position: static;
+  max-width: 640px;
+}
+
+@media (max-width: 820px) {
+  .hint {
+    top: 150px;
+    bottom: auto;
+  }
+
+  .caption {
+    right: var(--gutter);
+    bottom: 7vh;
+  }
+
+  .year {
+    top: 42%;
+  }
+}

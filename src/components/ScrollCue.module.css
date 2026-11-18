@@ -1,0 +1,70 @@
+.cue {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 22px 12px 14px;
+  border: 1px solid rgba(232, 163, 61, 0.55);
+  border-radius: 60px;
+  background: rgba(232, 163, 61, 0.08);
+  color: var(--ink);
+  transition: background 0.4s, border-color 0.4s, transform 0.5s var(--ease-out);
+}
+
+/* Halo qui respire pour attirer l'œil */
+.cue::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  border: 1px solid var(--accent);
+  animation: halo 2.6s var(--ease-out) infinite;
+  pointer-events: none;
+}
+
+.cue:hover {
+  background: rgba(232, 163, 61, 0.18);
+  border-color: var(--accent);
+  transform: translateY(2px);
+}
+
+.mouse {
+  position: relative;
+  width: 18px;
+  height: 28px;
+  border: 1.5px solid var(--ink);
+  border-radius: 10px;
+}
+
+.wheel {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  width: 3px;
+  height: 6px;
+  margin-left: -1.5px;
+  border-radius: 2px;
+  background: var(--accent);
+  animation: wheel 1.8s var(--ease-in-out) infinite;
+}
+
+.arrow {
+  color: var(--accent);
+  animation: nudge 1.8s var(--ease-in-out) infinite;
+}
+
+@keyframes wheel {
+  0% { transform: translateY(0); opacity: 1; }
+  70% { transform: translateY(9px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 0; }
+}
+
+@keyframes nudge {
+  0%, 100% { transform: translateY(-2px); }
+  50% { transform: translateY(4px); }
+}
+
+@keyframes halo {
+  from { transform: scale(1); opacity: 0.7; }
+  to { transform: scale(1.18, 1.5); opacity: 0; }
+}
