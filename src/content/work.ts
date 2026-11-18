@@ -12,6 +12,18 @@ export type LabItem = { name: string; kind: string; line: string; hidden?: boole
 
 export const work: Job[] = [
   {
+    org: 'PistaPart',
+    role: 'Développeur freelance — catalogue e-commerce Shopify',
+    period: 'Oct. 2026 — aujourd’hui',
+    summary: 'La mise en ligne d’un catalogue de pneumatiques sur Shopify.',
+    points: [
+      'Structuration des données produits pneumatiques.',
+      'Scripts Python pour préparer et transformer le catalogue.',
+      'Imports CSV dans Shopify.',
+    ],
+    stack: ['Python', 'Shopify', 'CSV'],
+  },
+  {
     org: 'Novxtel',
     role: 'Développeur full-stack .NET / Angular — alternance',
     period: 'Nov. 2023 — Sept. 2026',
@@ -41,6 +53,8 @@ export const work: Job[] = [
 ];
 
 export const labo: LabItem[] = [
+  { name: 'Évasion Mystique', kind: 'Web · Réservation', line: 'Une vitrine d’escape game et son espace de gestion, en démo en ligne.' },
+  { name: 'Passerelle', kind: 'Web · Associatif', line: 'Un site associatif et son backoffice : événements, demandes d’accompagnement, dons.' },
   { name: 'ShelfScan', kind: 'Vision · Retail', line: 'Lire un rayon comme un jeu de données : produits, facings, métriques.' },
   { name: 'ScentRadar', kind: 'Data · Découverte', line: 'Trouver un parfum proche par ses accords, son prix et sa saison.', hidden: true },
   { name: 'DocPDF', kind: 'Outil · Document', line: 'Rendre le PDF moins définitif : comprendre, transformer, générer.', hidden: true },
