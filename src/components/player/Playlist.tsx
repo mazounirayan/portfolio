@@ -35,7 +35,7 @@ export default function Playlist() {
 
   return (
     <section ref={root} id="playlist" className={styles.playlist} aria-labelledby="playlist-titre">
-      <Chapter id="playlist-titre" number="05" label="Playlist" title={['En boucle,', 'toujours']} accent={1} />
+      <Chapter id="playlist-titre" title={['En boucle,', 'toujours']} offset={1} />
 
       <div className={styles.layout}>
         <div className={styles.deck} data-reveal>

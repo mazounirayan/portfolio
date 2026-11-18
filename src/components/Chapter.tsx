@@ -1,26 +1,19 @@
 import styles from './Chapter.module.css';
 
 type Props = {
-  number: string;
-  label: string;
-  /** Lignes du titre ; la ligne à l'index `accent` passe en italique ambre */
+  /** Lignes du titre ; la ligne à l'index `offset` est décalée vers la droite */
   title: string[];
-  accent?: number;
+  offset?: number;
   id?: string;
 };
 
 // En-tête de chapitre commun à toutes les sections
-export default function Chapter({ number, label, title, accent, id }: Props) {
+export default function Chapter({ title, offset, id }: Props) {
   return (
     <div className={styles.chapter}>
-      <p className={`mono ${styles.label}`}>
-        <span>Chapitre {number}</span>
-        <span className={styles.dash} aria-hidden="true" />
-        <span>{label}</span>
-      </p>
       <h2 id={id} className={styles.title}>
         {title.map((line, i) => (
-          <span key={line} className={`line-mask ${i === accent ? styles.accent : ''}`}>
+          <span key={line} className={`line-mask ${i === offset ? styles.offset : ''}`}>
             <span>{line}</span>
           </span>
         ))}

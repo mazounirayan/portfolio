@@ -55,7 +55,7 @@ export default function FilmStrip() {
   return (
     <section ref={root} id="photos" className={styles.film} aria-labelledby="photos-titre">
       <div className={styles.head}>
-        <Chapter id="photos-titre" number="04" label="Photos" title={['Cadrage,', 'lumière, structure']} accent={1} />
+        <Chapter id="photos-titre" title={['Cadrage,', 'lumière, structure']} offset={1} />
         <p className={styles.note}>La photo, c’est aussi de l’architecture. Une pellicule par voyage, en attendant les tirages.</p>
       </div>
 

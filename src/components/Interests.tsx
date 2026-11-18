@@ -17,18 +17,17 @@ export default function Interests() {
 
   return (
     <section ref={root} id="hors-cadre" className={styles.interests} aria-labelledby="hors-cadre-titre">
-      <Chapter id="hors-cadre-titre" number="03" label="Hors cadre" title={['Ce qui ne rentre', 'pas dans un CV']} accent={1} />
+      <Chapter id="hors-cadre-titre" title={['Ce qui ne rentre', 'pas dans un CV']} offset={1} />
 
       {/* ---------- Parfumerie : chaque accord est un mélange de deux parfums ---------- */}
       <div className={styles.perfume}>
         <div className={styles.intro} data-reveal>
-          <p className="mono">Parfumerie</p>
           <h3>Deux parfums, un troisième</h3>
           <p>Je collectionne, je superpose, je chasse les dupes. Mes mélanges du moment :</p>
         </div>
 
         <ol className={styles.accords}>
-          {accords.map((a, i) => (
+          {accords.map((a) => (
             <li key={a.name} className={styles.accord} data-reveal>
               <div className={styles.blend} aria-hidden="true">
                 <span className={`${styles.drop} ${styles.dropA}`} />
@@ -36,7 +35,7 @@ export default function Interests() {
               </div>
               <div className={styles.formula}>
                 <span className={`mono ${styles.no}`}>
-                  N° {pad(i + 1)} — {a.name}
+                  {a.name}
                 </span>
                 <p className={styles.notes}>
                   <span>{a.pair[0]}</span>
@@ -54,7 +53,6 @@ export default function Interests() {
       <div className={styles.travel}>
         <div className={styles.travelSide}>
           <div className={styles.intro} data-reveal>
-            <p className="mono">Voyages</p>
             <h3>
               {cityCount} villes,
               <br />
@@ -93,7 +91,7 @@ export default function Interests() {
       {/* ---------- Écrans ---------- */}
       <div className={styles.screens}>
         <div data-reveal>
-          <p className="mono">Manette en main</p>
+          <h3 className={styles.listTitle}>Manette en main</h3>
           <ul className={styles.titles}>
             {screens.games.map((g) => (
               <li key={g}>{g}</li>
@@ -101,7 +99,7 @@ export default function Interests() {
           </ul>
         </div>
         <div data-reveal>
-          <p className="mono">Séries</p>
+          <h3 className={styles.listTitle}>Séries</h3>
           <ul className={styles.titles}>
             {screens.series.map((s) => (
               <li key={s}>{s}</li>

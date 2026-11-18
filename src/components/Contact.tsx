@@ -24,7 +24,7 @@ export default function Contact() {
 
   return (
     <section ref={root} id="contact" className={styles.contact} aria-labelledby="contact-titre">
-      <Chapter id="contact-titre" number="06" label="Contact" title={['Écrivons', 'la suite.']} accent={1} />
+      <Chapter id="contact-titre" title={['Écrivons', 'la suite.']} offset={1} />
 
       <div className={styles.mail} data-reveal>
         <a href={`mailto:${profile.email}`} className={styles.address}>
@@ -38,17 +38,17 @@ export default function Contact() {
       <ul className={styles.links} data-reveal>
         <li>
           <a href={profile.linkedin} target="_blank" rel="noreferrer">
-            <span className="mono">01</span> LinkedIn <span aria-hidden="true">↗</span>
+            LinkedIn <span aria-hidden="true">↗</span>
           </a>
         </li>
         <li>
           <a href={profile.github} target="_blank" rel="noreferrer">
-            <span className="mono">02</span> GitHub <span aria-hidden="true">↗</span>
+            GitHub <span aria-hidden="true">↗</span>
           </a>
         </li>
         <li>
           <a href={assetPath(profile.cvPath)} download>
-            <span className="mono">03</span> Télécharger le CV <span aria-hidden="true">↓</span>
+            Télécharger le CV <span aria-hidden="true">↓</span>
           </a>
         </li>
       </ul>

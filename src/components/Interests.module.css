@@ -4,11 +4,6 @@
   border-top: 1px solid var(--line);
 }
 
-.intro .mono {
-  margin: 0 0 16px;
-  color: var(--accent);
-}
-
 .intro h3 {
   margin: 0 0 16px;
   font-family: var(--font-serif), serif;
@@ -187,8 +182,12 @@
   padding: 50px 0 clamp(70px, 9vw, 120px);
 }
 
-.screens .mono {
+.listTitle {
   margin: 0 0 18px;
+  font-family: var(--font-serif), serif;
+  font-weight: 400;
+  font-size: clamp(26px, 2.4vw, 34px);
+  line-height: 1.1;
   color: var(--accent);
 }
 

@@ -7,8 +7,6 @@ import { eras } from '@/content/profile';
 import Ring from './Ring';
 import styles from './Portal.module.css';
 
-const pad = (n: number) => String(n).padStart(2, '0');
-
 // Le portail : on traverse l'anneau une fois par époque
 export default function Portal() {
   const root = useRef<HTMLElement>(null);
@@ -87,15 +85,13 @@ export default function Portal() {
         </p>
 
         <ol className={styles.list}>
-          {eras.map((era, i) => (
+          {eras.map((era) => (
             <li key={era.year} className={styles.item}>
               <span className={styles.year} aria-hidden="true">
                 {era.year}
               </span>
               <div className={styles.caption}>
-                <span className="mono">
-                  {pad(i + 1)} / {pad(eras.length)} · {era.year}
-                </span>
+                <span className="mono">{era.year}</span>
                 <h3>{era.title}</h3>
                 <p>{era.detail}</p>
               </div>

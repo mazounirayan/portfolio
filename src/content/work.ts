@@ -7,7 +7,8 @@ export type Job = {
   stack: string[];
 };
 
-export type LabItem = { name: string; kind: string; line: string };
+// hidden : projet masqué du site (gardé ici pour pouvoir le réafficher)
+export type LabItem = { name: string; kind: string; line: string; hidden?: boolean };
 
 export const work: Job[] = [
   {
@@ -41,12 +42,15 @@ export const work: Job[] = [
 
 export const labo: LabItem[] = [
   { name: 'ShelfScan', kind: 'Vision · Retail', line: 'Lire un rayon comme un jeu de données : produits, facings, métriques.' },
-  { name: 'ScentRadar', kind: 'Data · Découverte', line: 'Trouver un parfum proche par ses accords, son prix et sa saison.' },
-  { name: 'DocPDF', kind: 'Outil · Document', line: 'Rendre le PDF moins définitif : comprendre, transformer, générer.' },
-  { name: 'J.A.R.V.I.S', kind: 'IA · Assistant', line: 'Un assistant personnel fait de LLM, d’agents et de workflows n8n.' },
-  { name: 'AutoTikTok', kind: 'Automatisation', line: 'Un pipeline qui crée et publie des vidéos sans intervention.' },
-  { name: 'Agent Postulant', kind: 'IA · Emploi', line: 'Un agent qui prépare les candidatures à ma place.' },
+  { name: 'ScentRadar', kind: 'Data · Découverte', line: 'Trouver un parfum proche par ses accords, son prix et sa saison.', hidden: true },
+  { name: 'DocPDF', kind: 'Outil · Document', line: 'Rendre le PDF moins définitif : comprendre, transformer, générer.', hidden: true },
+  { name: 'J.A.R.V.I.S', kind: 'IA · Assistant', line: 'Un assistant personnel fait de LLM, d’agents et de workflows n8n.', hidden: true },
+  { name: 'AutoTikTok', kind: 'Automatisation', line: 'Un pipeline qui crée et publie des vidéos sans intervention.', hidden: true },
+  { name: 'Agent Postulant', kind: 'IA · Emploi', line: 'Un agent qui prépare les candidatures à ma place.', hidden: true },
   { name: 'Food Delivery', kind: 'Microservices', line: 'Une plateforme de livraison découpée en services Node.js et Docker.' },
   { name: 'MyAutoTrader', kind: 'Web3', line: 'Des smart contracts Solidity reliés au monde réel par Chainlink.' },
   { name: 'KapsuleKorp', kind: 'Infra · Mission', line: 'Automatisation d’une infrastructure Linux avec Ansible.' },
 ];
+
+/** Projets du labo affichés sur le site */
+export const visibleLabo = labo.filter((item) => !item.hidden);
