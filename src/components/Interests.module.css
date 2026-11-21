@@ -19,100 +19,6 @@
   color: var(--muted);
 }
 
-/* ---------- Parfumerie ---------- */
-.perfume {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr);
-  gap: clamp(28px, 5vw, 90px);
-  padding: 50px 0 clamp(70px, 9vw, 120px);
-}
-
-.accords {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.accord {
-  display: grid;
-  grid-template-columns: 120px minmax(0, 1fr);
-  align-items: center;
-  gap: clamp(18px, 3vw, 44px);
-  padding: 26px 0;
-  border-top: 1px solid var(--line);
-}
-
-/* Deux gouttes qui se superposent : la zone commune est le troisième parfum */
-.blend {
-  position: relative;
-  height: 74px;
-}
-
-.drop {
-  position: absolute;
-  top: 50%;
-  width: 66px;
-  height: 66px;
-  margin-top: -33px;
-  border-radius: 50%;
-  mix-blend-mode: screen;
-  transition: transform 0.9s var(--ease-out), opacity 0.6s;
-}
-
-.dropA {
-  left: 4px;
-  background: radial-gradient(circle at 35% 35%, rgba(239, 233, 223, 0.55), rgba(239, 233, 223, 0.08) 70%);
-  border: 1px solid rgba(239, 233, 223, 0.35);
-}
-
-.dropB {
-  left: 46px;
-  background: radial-gradient(circle at 35% 35%, rgba(232, 163, 61, 0.85), rgba(232, 163, 61, 0.12) 70%);
-  border: 1px solid rgba(232, 163, 61, 0.6);
-}
-
-.accord:hover .dropA {
-  transform: translateX(12px);
-}
-
-.accord:hover .dropB {
-  transform: translateX(-12px);
-}
-
-.formula {
-  min-width: 0;
-}
-
-.no {
-  color: var(--muted);
-}
-
-.notes {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 4px 14px;
-  margin: 8px 0 6px;
-  font-family: var(--font-serif), serif;
-  font-size: clamp(24px, 2.4vw, 36px);
-  line-height: 1.05;
-  letter-spacing: -0.01em;
-}
-
-.plus {
-  font-style: italic;
-  color: var(--accent);
-}
-
-.mood {
-  margin: 0;
-  font-family: var(--font-serif), serif;
-  font-style: italic;
-  font-size: 18px;
-  color: var(--muted);
-}
-
 /* ---------- Voyages ---------- */
 .travel {
   display: grid;
@@ -219,23 +125,8 @@
 }
 
 @media (max-width: 900px) {
-  .perfume,
   .travel,
   .screens {
     grid-template-columns: 1fr;
-  }
-
-  .accord {
-    grid-template-columns: 90px minmax(0, 1fr);
-  }
-
-  .drop {
-    width: 52px;
-    height: 52px;
-    margin-top: -26px;
-  }
-
-  .dropB {
-    left: 34px;
   }
 }

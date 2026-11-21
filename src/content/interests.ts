@@ -1,12 +1,3 @@
-// Accords tirés de vault/profile/04_Personal/Parfumerie.md (« Les meilleurs combos dans ce que tu as »).
-export type Accord = { name: string; pair: [string, string]; mood: string };
-
-export const accords: Accord[] = [
-  { name: 'Bureau', pair: ['YSL Y EDP', 'Boss Bottled'], mood: 'Propre, sérieux, premium.' },
-  { name: 'Été', pair: ['Afnan Turathi Electric', 'Never-ending Summer'], mood: 'Chemise blanche sur un rooftop.' },
-  { name: 'Hiver', pair: ['Afnan 9PM', 'Scandal Le Parfum'], mood: 'Chaud, sucré, impossible à ignorer.' },
-];
-
 // x / y en % d'une carte couvrant longitude -11 → 21 et latitude 57 → 35.
 // `side` : où placer le nom quand on zoome (évite les chevauchements dans les voyages serrés)
 // `via: 'vol'` : la ville est rejointe en avion depuis la précédente (tracé en pointillés)

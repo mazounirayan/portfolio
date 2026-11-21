@@ -1,7 +1,7 @@
 import styles from './Chapter.module.css';
 
 type Props = {
-  /** Lignes du titre ; la ligne à l'index `offset` est décalée vers la droite */
+  /** Lignes du titre ; la ligne à l'index `offset` est décalée vers la droite, en italique ambre */
   title: string[];
   offset?: number;
   id?: string;

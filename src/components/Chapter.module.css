@@ -13,6 +13,8 @@
 
 .offset {
   padding-left: 0.6em;
+  font-style: italic;
+  color: var(--accent);
 }
 
 @media (max-width: 640px) {

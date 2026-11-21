@@ -1,13 +1,13 @@
 import { describe, expect, it } from 'vitest';
 import { eras, profile } from './profile';
 import { labo, work } from './work';
-import { accords, screens, trips } from './interests';
+import { screens, trips } from './interests';
 import { photos } from './photos';
 import { tracks } from './playlist';
 
 describe('contenu', () => {
   it('aucune année de naissance', () => {
-    expect(JSON.stringify([profile, eras, work, labo, accords, trips, screens, photos, tracks])).not.toContain('2001');
+    expect(JSON.stringify([profile, eras, work, labo, trips, screens, photos, tracks])).not.toContain('2001');
   });
 
   it('4 voyages dans l’ordre', () => {

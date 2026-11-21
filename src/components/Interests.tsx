@@ -2,12 +2,11 @@
 
 import { useRef, useState } from 'react';
 import { useReveal } from '@/lib/useReveal';
-import { accords, screens, trips } from '@/content/interests';
+import { screens, trips } from '@/content/interests';
 import Chapter from './Chapter';
 import EuropeMap from './EuropeMap';
 import styles from './Interests.module.css';
 
-const pad = (n: number) => String(n).padStart(2, '0');
 const cityCount = trips.reduce((n, t) => n + t.cities.length, 0);
 
 export default function Interests() {
@@ -18,36 +17,6 @@ export default function Interests() {
   return (
     <section ref={root} id="hors-cadre" className={styles.interests} aria-labelledby="hors-cadre-titre">
       <Chapter id="hors-cadre-titre" title={['En dehors', 'du code']} offset={1} />
-
-      {/* ---------- Parfumerie : chaque accord est un mélange de deux parfums ---------- */}
-      <div className={styles.perfume}>
-        <div className={styles.intro} data-reveal>
-          <h3>Parfumerie</h3>
-          <p>Je collectionne les parfums et j’aime les superposer. Mes associations préférées :</p>
-        </div>
-
-        <ol className={styles.accords}>
-          {accords.map((a) => (
-            <li key={a.name} className={styles.accord} data-reveal>
-              <div className={styles.blend} aria-hidden="true">
-                <span className={`${styles.drop} ${styles.dropA}`} />
-                <span className={`${styles.drop} ${styles.dropB}`} />
-              </div>
-              <div className={styles.formula}>
-                <span className={`mono ${styles.no}`}>
-                  {a.name}
-                </span>
-                <p className={styles.notes}>
-                  <span>{a.pair[0]}</span>
-                  <span className={styles.plus}>+</span>
-                  <span>{a.pair[1]}</span>
-                </p>
-                <p className={styles.mood}>{a.mood}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
-      </div>
 
       {/* ---------- Voyages : liste des itinéraires + carte qui zoome ---------- */}
       <div className={styles.travel}>
