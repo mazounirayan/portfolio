@@ -102,8 +102,6 @@ export default function Hero({ clone = false }: { clone?: boolean }) {
         </ul>
       </nav>
 
-      <p className={`mono ${styles.episode} ${styles.fade} ${styles.fadeOut}`}>Origine</p>
-
       <div className={styles.ring}>
         <Ring progress={clone ? 1 : 0.08} photoSrc={assetPath(profile.photo)} />
       </div>

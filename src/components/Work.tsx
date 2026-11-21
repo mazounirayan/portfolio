@@ -13,7 +13,7 @@ export default function Work() {
 
   return (
     <section ref={root} id="travaux" className={styles.work} aria-labelledby="travaux-titre">
-      <Chapter id="travaux-titre" title={['Ce que', 'je construis']} offset={1} />
+      <Chapter id="travaux-titre" title={['Expérience', 'professionnelle']} offset={1} />
 
       {work.map((job) => (
         <article key={job.org} className={styles.job}>

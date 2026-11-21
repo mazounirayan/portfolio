@@ -24,7 +24,7 @@ export default function Contact() {
 
   return (
     <section ref={root} id="contact" className={styles.contact} aria-labelledby="contact-titre">
-      <Chapter id="contact-titre" title={['Écrivons', 'la suite.']} offset={1} />
+      <Chapter id="contact-titre" title={['Me', 'contacter']} offset={1} />
 
       <div className={styles.mail} data-reveal>
         <a href={`mailto:${profile.email}`} className={styles.address}>
@@ -54,7 +54,7 @@ export default function Contact() {
       </ul>
 
       <footer className={styles.footer}>
-        <p className="mono">© 2026 Rayan Mazouni — conçu et codé à la main</p>
+        <p className="mono">© 2026 Rayan Mazouni · site conçu et développé par moi</p>
         <p className={styles.tagline}>{profile.tagline}</p>
         <a href="#top" className="mono">
           Revenir au début ↑

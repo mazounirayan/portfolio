@@ -69,7 +69,7 @@ export default function Portal() {
     <section ref={root} id="portail" className={styles.portal_section} aria-labelledby="portail-titre">
       <div className={styles.stage}>
         <div className={styles.head}>
-          <p id="portail-titre" className="mono">Le portail — cinq époques</p>
+          <p id="portail-titre" className="mono">Mon parcours</p>
           <div className={styles.track} aria-hidden="true">
             <span className={styles.bar} />
           </div>

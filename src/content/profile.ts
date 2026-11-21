@@ -4,10 +4,10 @@ export const profile = {
   name: 'Rayan Mazouni',
   firstName: 'Rayan',
   lastName: 'Mazouni',
-  role: 'Développeur full-stack .NET, futur architecte logiciel',
+  role: 'Développeur full-stack .NET / Angular',
   intro:
-    'Trois ans d’alternance chez Novxtel sur un ERP en production, un Mastère en architecture logicielle, et une vingtaine de projets à côté. Je construis des produits, je documente mes choix, et je recommence en mieux.',
-  tagline: 'Tout ce qui finit recommence.',
+    'Trois ans d’alternance chez Novxtel sur un ERP utilisé chaque jour par plus de 700 personnes, et un Mastère en architecture logicielle à l’ESGI. Je travaille surtout en C#, ASP.NET, Angular et SQL Server.',
+  tagline: 'Merci de votre visite.',
   email: 'mazounirayan@gmail.com',
   linkedin: 'https://www.linkedin.com/in/rayan-mazouni',
   github: 'https://github.com/mazounirayan',
@@ -21,26 +21,26 @@ export const eras: Era[] = [
   {
     year: '2020',
     title: 'Licence Informatique',
-    detail: 'Université d’Angers. Programmation objet, systèmes d’exploitation, architecture des ordinateurs.',
+    detail: 'Université d’Angers. Bases en programmation objet, systèmes d’exploitation et architecture des ordinateurs.',
   },
   {
     year: '2023',
     title: 'ESGI Paris & Novxtel',
-    detail: 'Bachelor en alternance. Premier code en production : une application iOS en Swift avec paiement 3D Secure.',
+    detail: 'Début du Bachelor en alternance chez Novxtel. Première mise en production : une application iOS en Swift avec paiement 3D Secure.',
   },
   {
     year: '2024',
     title: 'Mastère Architecture Logicielle',
-    detail: 'Back-office React et .NET, messages télécoms via RabbitMQ, ERP Angular en production dans plus de dix établissements.',
+    detail: 'Entrée en Mastère. Chez Novxtel : back-office React et .NET, messages télécoms via RabbitMQ, ERP Angular déployé dans plus de dix établissements.',
   },
   {
     year: '2026',
     title: 'RT Solutions — SmartShelf AI',
-    detail: 'Mémoire sur l’IA appliquée au merchandising en grande distribution. Fin de trois ans d’alternance chez Novxtel.',
+    detail: 'Mémoire avec RT Solutions sur l’IA pour analyser les rayons en supermarché. Fin de l’alternance chez Novxtel.',
   },
   {
     year: 'Après',
     title: 'Architecte logiciel',
-    detail: 'Event-driven, systèmes distribués, observabilité. La boucle continue.',
+    detail: 'Ce que je veux approfondir : architectures orientées événements, systèmes distribués et observabilité.',
   },
 ];

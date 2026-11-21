@@ -17,13 +17,13 @@ export default function Interests() {
 
   return (
     <section ref={root} id="hors-cadre" className={styles.interests} aria-labelledby="hors-cadre-titre">
-      <Chapter id="hors-cadre-titre" title={['Ce qui ne rentre', 'pas dans un CV']} offset={1} />
+      <Chapter id="hors-cadre-titre" title={['En dehors', 'du code']} offset={1} />
 
       {/* ---------- Parfumerie : chaque accord est un mélange de deux parfums ---------- */}
       <div className={styles.perfume}>
         <div className={styles.intro} data-reveal>
-          <h3>Deux parfums, un troisième</h3>
-          <p>Je collectionne, je superpose, je chasse les dupes. Mes mélanges du moment :</p>
+          <h3>Parfumerie</h3>
+          <p>Je collectionne les parfums et j’aime les superposer. Mes associations préférées :</p>
         </div>
 
         <ol className={styles.accords}>
@@ -58,7 +58,7 @@ export default function Interests() {
               <br />
               {trips.length} voyages.
             </h3>
-            <p>De Barcelone à Budapest. Choisissez un voyage pour suivre son itinéraire.</p>
+            <p>Choisissez un voyage pour voir l’itinéraire sur la carte.</p>
           </div>
 
           <ol className={styles.trips} onMouseLeave={() => setTrip(null)} data-reveal>
@@ -91,7 +91,7 @@ export default function Interests() {
       {/* ---------- Écrans ---------- */}
       <div className={styles.screens}>
         <div data-reveal>
-          <h3 className={styles.listTitle}>Manette en main</h3>
+          <h3 className={styles.listTitle}>Jeux vidéo</h3>
           <ul className={styles.titles}>
             {screens.games.map((g) => (
               <li key={g}>{g}</li>

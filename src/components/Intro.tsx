@@ -114,7 +114,7 @@ export default function Intro() {
       <div className={styles.countMask} aria-hidden="true">
         <span className={styles.count}>{year}</span>
       </div>
-      <p className={`mono ${styles.label}`}>Chargement de la boucle</p>
+      <p className={`mono ${styles.label}`}>Chargement</p>
       <button type="button" className={`mono ${styles.skip}`} onClick={skip}>
         Passer
       </button>

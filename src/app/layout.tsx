@@ -9,7 +9,7 @@ const sans = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata: Metadata = {
   title: 'Rayan Mazouni — Portfolio',
-  description: 'Développeur full-stack .NET, futur architecte logiciel. Projets, photos, voyages et une playlist en boucle.',
+  description: 'Développeur full-stack .NET / Angular. Parcours, expérience, projets et centres d’intérêt.',
 };
 
 export const viewport: Viewport = {

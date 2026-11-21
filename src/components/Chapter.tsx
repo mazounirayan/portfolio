@@ -14,7 +14,7 @@ export default function Chapter({ title, offset, id }: Props) {
       <h2 id={id} className={styles.title}>
         {title.map((line, i) => (
           <span key={line} className={`line-mask ${i === offset ? styles.offset : ''}`}>
-            <span>{line}</span>
+            <span>{line}</span>{' '}
           </span>
         ))}
       </h2>
